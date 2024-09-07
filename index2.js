@@ -17,7 +17,7 @@ function _9(svgFaces)
       buddy.classList.remove("wink");
     });
   });
-  return "// add event listeners for grid of faces";
+  return " ";
 }
 
 
@@ -80,7 +80,7 @@ function _svgFaces(_,colors,chroma,svg,width,nCols,splitn)
   
   
   const nRows = Math.floor(nCols / 2);
-  const result = svg`<svg id="smileysvg" class="smiley" viewBox="-50 0 100 100">
+  const result = svg`<svg id="smileysvg" class="smiley" viewBox="-50 0 50 100">
 ${looper(nCols, nRows).map(([x, y]) => oneFace(x, y))}
 </svg>`;
   return result;
@@ -141,36 +141,6 @@ htl.html`<style>
 
 
 
-function _colors(){return(
-{
-  "medium almond": "#c79377",
-  "medium deep rose": "#e88c94",
-  "light medium almond": "#d9af9e",
-  "light medium rose": "#f3aeb3",
-  "light almond": "#e6b9b4",
-  "light rose": "#fbc7c4",
-  "light medium golden": "#f2c8a2",
-  "very light almond": "#e6d2d3",
-  "light golden": "#eddcc5",
-  "very light rose": "#f8e1e2",
-  "very light golden": "#f0dece",
-  "very light almond": "#ede6cf",
-  "deepest almond": "#533528",
-  "extra deep golden": "#614430",
-  "extra deep rose": "#6d4d4c",
-  "extra deep almond": "#6e4f45",
-  "very deep almond": "#88605f",
-  "deep golden": "#8c5b2a",
-  "medium deep golden": "#a06b4f",
-  "deep almond": "#976a59",
-  "very deep rose": "#906c65",
-  "deep rose": "#b96e6b",
-  "medium deep almond": "#ac8068",
-  "medium golden": "#dda26b"
-}
-)}
-
-
 
 function _chroma(require){return(
 require("chroma-js@2.4.2/chroma.js")
@@ -185,7 +155,6 @@ export default function define(runtime, observer) {
   main.variable(observer("nCols")).define("nCols", ["Generators", "viewof nCols"], (G, _) => G.input(_));
   main.variable(observer("svgFaces")).define("svgFaces", ["_","colors","chroma","svg","width","nCols","splitn"], _svgFaces);
   main.variable(observer()).define(["htl"], _13);
-  main.variable(observer("colors")).define("colors", _colors);
   main.variable(observer("chroma")).define("chroma", ["require"], _chroma);
   return main;
 }
