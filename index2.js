@@ -79,25 +79,8 @@ function _svgFaces(_,colors,chroma,svg,width,nCols,splitn)
   }
   
   
-  
-  let windowWidth = window.innerWidth;
-
-  // set SVG size parameters
- MARGIN = {
-    TOP: window.innerHeight * 0,
-    BOTTOM: window.innerHeight * 0,
-    LEFT: window.innerWidth * 0,
-    RIGHT: window.innerWidth * 0,
-  };
-  WIDTHS =
-    window.innerWidth < 950 ? windowWidth / 1.15 : windowWidth / 1.75;
- HEIGHTS =
-    window.innerWidth < 950
-      ? window.innerHeight / 1.8
-      : window.innerHeight / 1.95;
-
   const nRows = Math.floor(nCols / 2);
-  const result = svg`<svg class="smiley" width=${WIDTHS} height=${HEIGHTS}>
+  const result = svg`<svg id="smileysvg" class="smiley" viewBox="-50 0 100 100">
 ${looper(nCols, nRows).map(([x, y]) => oneFace(x, y))}
 </svg>`;
   return result;
