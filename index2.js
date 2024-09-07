@@ -66,7 +66,7 @@ function _svgFaces(_,colors,chroma,svg,width,nCols,splitn)
     let mouthColor = chroma(faceColor).darken(2);
     return svg`<svg x=${i * w} y=${
       j * w
-    } class="buddy" viewBox="-5 -5 110 70" width=${w} height=${w}>
+    } class="smiley" >
         <ellipse cx="50" cy="30" rx="50" ry="50" class="face" fill="${faceColor}" />
         <ellipse cx="30" cy="27.5" rx="10" ry="10" class="eye right-eye" fill="white" stroke="none" vector-effect="non-scaling-stroke" stroke-width=1 />
         <ellipse cx="33" cy="27.5" rx="5" ry="5" class="eye right-eye" fill="black" stroke="none" />
