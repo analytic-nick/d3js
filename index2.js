@@ -66,7 +66,7 @@ function _svgFaces(_,colors,chroma,svg,width,nCols,splitn)
     let mouthColor = chroma(faceColor).darken(2);
     return svg`<svg x=${i * w} y=${
       j * w
-    } class="smiley" id="smileysvg"  viewBox="-50 0 100 100">
+    } class="buddy" viewBox="-50 0 100 100">
         <ellipse cx="50" cy="30" rx="50" ry="50" class="face" fill="${faceColor}" />
         <ellipse cx="30" cy="27.5" rx="10" ry="10" class="eye right-eye" fill="white" stroke="none" vector-effect="non-scaling-stroke" stroke-width=1 />
         <ellipse cx="33" cy="27.5" rx="5" ry="5" class="eye right-eye" fill="black" stroke="none" />
@@ -97,7 +97,7 @@ function _svgFaces(_,colors,chroma,svg,width,nCols,splitn)
       : window.innerHeight / 1.95;
 
   const nRows = Math.floor(nCols / 2);
-  const result = svg`<svg class="smiley" id="smileysvg" width=${WIDTHS} height=${HEIGHTS}>
+  const result = svg`<svg class="smiley" width=${WIDTHS} height=${HEIGHTS}>
 ${looper(nCols, nRows).map(([x, y]) => oneFace(x, y))}
 </svg>`;
   return result;
